@@ -16,7 +16,7 @@ while True:
     file_name = file_name_data.decode()
     try:
         # 数据传输
-        with open("/home/python/Desktop/" + file_name, "rb") as file:
+        with open("C:/Users/jlurobot/Desktop/RECV/" + file_name, "rb") as file:
             while True:
                 # 读取文件数据
                 file_data = file.read(1024)

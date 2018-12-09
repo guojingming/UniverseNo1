@@ -6,13 +6,13 @@ tcp_client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 # 绑定端口
 #tcp_client_socket.bind(("", 8080))
 # 连接IP地址和端口
-tcp_client_socket.connect(("192.168.43.216", 8080))
+tcp_client_socket.connect(("127.0.0.1", 8080))
 file_name = input("请输入要下载的文件：\n")
 # 文件名编码
 tcp_client_socket.send(file_name.encode())
 try:
     # 文件传输
-    with open("C:/Users/Administrator/Desktop/" + file_name, "wb") as file:
+    with open("C:/Users/jlurobot/Desktop/" + file_name, "wb") as file:
         while True:
             # 接收数据
             file_data = tcp_client_socket.recv(1024)
