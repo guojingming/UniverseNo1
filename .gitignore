@@ -1,2 +1,2 @@
-data/model/*
-resources/test_video
+data/darknet_weights/*
+resources/test_video/*
