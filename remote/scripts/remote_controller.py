@@ -3,7 +3,7 @@ import cv2
 from yolo_utils import yolo_util as yu
 
 
-param = yu.init_params("../")
+param = yu.init_params("../../")
 
 cap = cv2.VideoCapture(0)
 

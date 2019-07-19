@@ -63,6 +63,7 @@ def get_predict_result(img_ori, params):
         boxes_[:, 2] *= (width_ori/float(params[3].new_size[0]))
         boxes_[:, 1] *= (height_ori/float(params[3].new_size[1]))
         boxes_[:, 3] *= (height_ori/float(params[3].new_size[1]))
+        '''
         print("box coords:")
         print(boxes_)
         print('*' * 30)
@@ -71,6 +72,7 @@ def get_predict_result(img_ori, params):
         print('*' * 30)
         print("labels:")
         print(labels_)
+        '''
         for i in range(len(boxes_)):
             x0, y0, x1, y1 = boxes_[i]
             plot_one_box(img_ori, [x0, y0, x1, y1], label=params[3].classes[labels_[i]],

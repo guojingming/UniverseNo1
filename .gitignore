@@ -1,2 +1,2 @@
-data/darknet_weights/*
-resources/test_video/*
+remote/data/darknet_weights/*
+remote/resources/test_video/*
