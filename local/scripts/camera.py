@@ -1,13 +1,21 @@
 import cv2
 
-cap = cv2.VideoCapture(0)
 
-while True:
-    ret,frame = cap.read()
-    # Display the resulting frame
-    cv2.imshow('frame', frame)
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
+def camera_init(number):
+    cap = cv2.VideoCapture(0)
+    return cap
 
-cap.release()
-cv2.destroyAllWindows()
+
+def get_picture(cap):
+    ret, frame = cap.read()
+    return frame
+
+
+def camera_release(cap):
+    cap.release()
+    cv2.destroyAllWindows()
+
+
+def show_picture(frame):
+    cv2.imshow("Test", frame)
+    cv2.waitKey(1)
