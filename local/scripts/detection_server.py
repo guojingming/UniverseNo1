@@ -19,19 +19,17 @@ class DetectionServer:
         self.tcpSerSock.close()
 
     def start(self):
+        # wrong
         while True:
-            #print('waiting for connection...')
+            self.tags = []
             self.tcpCliSock, addr = self.tcpSerSock.accept()
-            #print ('...connected from:', addr)
             while True:
                 data = self.tcpCliSock.recv(self.BUFSIZE)
-                #print("recv:", data.decode("utf-8"))
                 if not data:
                     break
                 filename = data.decode("utf-8")
                 if os.path.exists(filename):
                     filesize = str(os.path.getsize(filename))
-                    #print("文件大小为：", filesize)
                     self.tcpCliSock.send(filesize.encode())
                     data = self.tcpCliSock.recv(self.BUFSIZE)   #挂起服务器发送，确保客户端单独收到文件大小数据，避免粘包
                     print("开始发送")
@@ -40,3 +38,6 @@ class DetectionServer:
                         self.tcpCliSock.send(line)
                 else:
                     self.tcpCliSock.send("0001".encode())   #如果文件不存在，那么就返回该代码
+
+    def get_tags(self):
+        return self.tags

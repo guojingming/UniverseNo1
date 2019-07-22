@@ -1,6 +1,8 @@
 import os, struct, array
 from fcntl import ioctl
-import thread
+from threading import Thread
+
+
 '''
 Type 1:Button   2:axis
 Number <=> Channel Number
@@ -16,14 +18,14 @@ Value    Type    Number    Comment
 32767    2       5         l-down
 '''
 
+
 class JoystickController:
     def __init__(self):
-        # 0:stop 1:forward 2:backward 3:turn_left 4:turn_right
+        # 0:stop 1:forward 2:backward 3:turn_left 4:turn_right 5:待机模式 6:遥控 7:追踪
         self.cmd = 0
         self.joy_stick = '/dev/input/js0'
         self.jsdev = open(self.joy_stick, 'rb')
         self.buf = array.array('B', [0])
-        # JSIOCGAXES
         ioctl(self.jsdev, 0x80016a11, self.buf)
 
     def update_process(self):
@@ -48,6 +50,24 @@ class JoystickController:
                             self.cmd = 1
                         else:
                             self.cmd = 0
+                elif channel_type == 1:
+                    # 待机
+                    if channel_number == 5:
+                        if value == 1:
+                            self.cmd = 5
+                    # 遥控
+                    if channel_number == 7:
+                        if value == 1:
+                            self.cmd = 7
+
+                    # 追踪
+                    if channel_number == 6:
+                        if value == 1:
+                            self.cmd = 6
 
     def start_joy_contoller(self):
-        thread.start_new_thread(self.update_process, ("Thread-1", 2,))
+        thread = Thread(target=self.update_process, args=(0,))
+        thread.start()
+
+    def get_cmd(self):
+        return self.cmd

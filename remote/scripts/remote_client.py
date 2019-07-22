@@ -16,6 +16,7 @@ from utils.plot_utils import get_color_table, plot_one_box
 
 from model import yolov3
 
+
 def recv_handler(cli_socket, count):
         buf = b''
         while count:
