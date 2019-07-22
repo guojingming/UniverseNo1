@@ -47,8 +47,8 @@ def init_params(root_folder):
 
     saver = tf.train.Saver()
     saver.restore(session, args.restore_path)
+    return boxes, scores, labels, args, color_table, input_data
 
-    return (boxes, scores, labels, args, color_table, input_data)
 
 def get_predict_result(img_ori, params):
         height_ori, width_ori = img_ori.shape[:2]
@@ -77,4 +77,4 @@ def get_predict_result(img_ori, params):
             x0, y0, x1, y1 = boxes_[i]
             plot_one_box(img_ori, [x0, y0, x1, y1], label=params[3].classes[labels_[i]],
                          color=params[4][labels_[i]])
-        return img_ori
+        return img_ori, boxes_, scores_, labels_
