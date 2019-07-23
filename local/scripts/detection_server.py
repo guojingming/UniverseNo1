@@ -1,6 +1,6 @@
 import os
 from socket import *
-
+from threading import Thread
 
 class DetectionServer:
     def init(self, host, port, buffer_size=1024):
@@ -18,7 +18,7 @@ class DetectionServer:
         self.tcpCliSock.close()
         self.tcpSerSock.close()
 
-    def start(self):
+    def process(self):
         # wrong
         while True:
             self.tags = []
@@ -31,13 +31,22 @@ class DetectionServer:
                 if os.path.exists(filename):
                     filesize = str(os.path.getsize(filename))
                     self.tcpCliSock.send(filesize.encode())
+<<<<<<< HEAD
                     data = self.tcpCliSock.recv(self.BUFSIZE)   #挂起服务器发送，确保客户端单独收到文件大小数据，避免粘包
                     #print("开始发送")
+=======
+                    data = self.tcpCliSock.recv(self.BUFSIZE)  # 挂起服务器发送，确保客户端单独收到文件大小数据，避免粘包
+                    print("开始发送")
+>>>>>>> ce14f2df50fc28e62af5f65fe28f8b19f558e1f1
                     f = open(filename, "rb")
                     for line in f:
                         self.tcpCliSock.send(line)
                 else:
-                    self.tcpCliSock.send("0001".encode())   #如果文件不存在，那么就返回该代码
+                    self.tcpCliSock.send("0001".encode())  # 如果文件不存在，那么就返回该代码
+
+    def start(self):
+        thread = Thread(target=self.process())
+        thread.start()
 
     def get_tags(self):
         return self.tags
