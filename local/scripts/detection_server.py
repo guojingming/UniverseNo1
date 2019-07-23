@@ -32,7 +32,7 @@ class DetectionServer:
                     filesize = str(os.path.getsize(filename))
                     self.tcpCliSock.send(filesize.encode())
                     data = self.tcpCliSock.recv(self.BUFSIZE)   #挂起服务器发送，确保客户端单独收到文件大小数据，避免粘包
-                    print("开始发送")
+                    #print("开始发送")
                     f = open(filename, "rb")
                     for line in f:
                         self.tcpCliSock.send(line)

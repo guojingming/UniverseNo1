@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="92186d48-f772-4f03-a702-697ca4a7bf3c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/UniverseNo1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/UniverseNo1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/local/scripts/rplidar_driver.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local/scripts/joystick_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/local/scripts/joystick_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local/scripts/detection_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/local/scripts/detection_server.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,7 +18,7 @@
         <entry file="file://$PROJECT_DIR$/local/scripts/joystick_controller.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-637">
-              <caret line="19" column="3" lean-forward="true" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
+              <caret line="19" column="3" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
               </folding>
@@ -40,7 +38,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="100">
@@ -52,10 +50,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/local/scripts/detection_server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="16" column="20" lean-forward="true" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+            <state relative-caret-position="625">
+              <caret line="25" column="23" lean-forward="true" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/local/scripts/rplidar_driver.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="250">
+              <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+              <folding>
+                <element signature="e#71#98#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -121,16 +131,18 @@
         <option value="$PROJECT_DIR$/local/scripts/charsing_controller.py" />
         <option value="$PROJECT_DIR$/remote/scripts/remote_client.py" />
         <option value="$PROJECT_DIR$/local/scripts/joystick_controller.py" />
-        <option value="$PROJECT_DIR$/local/scripts/detection_server.py" />
         <option value="$PROJECT_DIR$/config.py" />
+        <option value="$PROJECT_DIR$/local/scripts/detection_server.py" />
+        <option value="$PROJECT_DIR$/local/scripts/rplidar.py" />
+        <option value="$PROJECT_DIR$/local/scripts/rplidar_driver.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1325" />
-    <option name="y" value="365" />
-    <option name="width" value="2019" />
-    <option name="height" value="1639" />
+    <option name="x" value="1309" />
+    <option name="y" value="279" />
+    <option name="width" value="2388" />
+    <option name="height" value="1708" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -173,7 +185,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/local/scripts/joystick_controller.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/local/scripts/rplidar.py" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -200,7 +212,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.joystick_controller">
+  <component name="RunManager" selected="Python.rplidar_driver">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="UniverseNo1" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -223,7 +235,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="joystick_controller" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+    <configuration name="rplidar_driver" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="UniverseNo1" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -236,7 +248,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/local/scripts/joystick_controller.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/local/scripts/rplidar_driver.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -269,7 +281,7 @@
     </configuration>
     <list>
       <item itemvalue="Python.yolo_camera_test" />
-      <item itemvalue="Python.joystick_controller" />
+      <item itemvalue="Python.rplidar_driver" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -282,26 +294,26 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1563437158684</updated>
-      <workItem from="1563778744534" duration="5733000" />
+      <workItem from="1563778744534" duration="13408000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5733000" />
+    <option name="totallyTimeSpent" value="13408000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1325" y="365" width="2019" height="1639" extended-state="0" />
+    <frame x="1309" y="279" width="2388" height="1708" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22634968" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19137353" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3279893" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3994656" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3135377" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.399106" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -310,7 +322,7 @@
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="SciView" />
+      <window_info anchor="right" id="SciView" visible="true" weight="0.17629816" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -339,7 +351,7 @@
     <option name="version" value="1" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/UniverseNo1$joystick_controller.coverage" NAME="joystick_controller Coverage Results" MODIFIED="1563783164759" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/local/scripts" />
+    <SUITE FILE_PATH="coverage/UniverseNo1$joystick_controller.coverage" NAME="rplidar_driver Coverage Results" MODIFIED="1563872553118" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/local/scripts" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/scripts/yolo_utils/utils/utils/__init__.py" />
@@ -419,7 +431,7 @@
     <entry file="file://$PROJECT_DIR$/local/scripts/joystick_controller.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-637">
-          <caret line="19" column="3" lean-forward="true" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
+          <caret line="19" column="3" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
           </folding>
@@ -430,16 +442,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="2" column="47" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/local/scripts/detection_server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="16" column="20" lean-forward="true" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -457,6 +459,33 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local/scripts/detection_server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="625">
+          <caret line="25" column="23" lean-forward="true" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/envs/tfenv/lib/python3.6/site-packages/rplidar.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1003">
+          <caret line="256" column="26" lean-forward="true" selection-start-line="256" selection-start-column="26" selection-end-line="256" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local/scripts/rplidar_driver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+          <folding>
+            <element signature="e#71#98#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
