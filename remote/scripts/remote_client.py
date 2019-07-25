@@ -7,8 +7,9 @@ import numpy as np
 import config as cfg
 import socket
 from yolo_utils import yolo_util as yu
+from threading import Thread
 
-param = yu.init_params("../../")
+param = yu.init_params("../")
 
 
 def recv_handler(cli_socket, count):
@@ -22,21 +23,23 @@ def recv_handler(cli_socket, count):
     return buf
 
 
-
-
 class RemoteClient:
     def __init__(self):
-        self.cli_socket = socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.cli_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
     def connect(self):
         self.cli_socket.connect((cfg.server_address, cfg.server_port))
 
     def process(self):
+        self.connect()
         while 1:
             length = recv_handler(self.cli_socket, 16)
             string_data = recv_handler(self.cli_socket, int(length))
             data = np.frombuffer(string_data, np.uint8)
+            #data = data.reshape((cfg.window_height, cfg.window_width, 3))
             img_ori = cv2.imdecode(data, cv2.IMREAD_COLOR)
+            #cv2.imshow("window1", img_ori)
+            #cv2.waitKey(1)
             height_ori, width_ori = img_ori.shape[:2]
             img_ori, boxes_, scores_, labels_ = yu.get_predict_result(img_ori, param)
             # reconstruct result
@@ -51,5 +54,13 @@ class RemoteClient:
             self.cli_socket.send(str.encode(str(len(result_string)).ljust(16)))
             self.cli_socket.send(result_string)
 
-    #def start(self):
 
+    def start(self):
+        thread = Thread(target=self.process())
+        thread.start()
+
+
+if __name__ == "__main__":
+    #pic = cv2.imread("D:/1.jpg")
+    client = RemoteClient()
+    client.process()
