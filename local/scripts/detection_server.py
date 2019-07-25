@@ -18,7 +18,7 @@ def recv_handler(cli_socket, count):
 
 
 class DetectionServer:
-    def init(self, host, port, buffer_size=1024):
+    def __init__(self, host, port, buffer_size=1024):
         self.HOST = host
         self.PORT = port
         self.BUFSIZE = buffer_size
@@ -34,6 +34,7 @@ class DetectionServer:
         self.tcpSerSock.close()
 
     def process(self):
+        self.listen()
         # wrong
         while True:
             self.tags = []
@@ -46,7 +47,7 @@ class DetectionServer:
                 length = len(frame_string)
                 tcpCliSock.send(str(length).ljust(16))
                 tcpCliSock.send(frame_string)
-                tag_data = recv_handler(tcpCliSock, 1024)
+                tag_data = recv_handler(tcpCliSock, self.BUFSIZE)
 
             camera.camera_release(cap)
 
@@ -57,3 +58,8 @@ class DetectionServer:
 
     def get_tags(self):
         return self.tags
+
+
+if __name__ == '__main__':
+    detection_server = DetectionServer(cfg.server_address, cfg.server_port)
+    detection_server.start()
