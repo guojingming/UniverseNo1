@@ -2,7 +2,7 @@ import cv2
 
 
 def camera_init(number):
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(number)
     return cap
 
 

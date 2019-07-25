@@ -51,5 +51,5 @@ class RemoteClient:
             self.cli_socket.send(str.encode(str(len(result_string)).ljust(16)))
             self.cli_socket.send(result_string)
 
-    def start(self):
+    #def start(self):
 
