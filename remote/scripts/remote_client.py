@@ -18,6 +18,7 @@ def recv_handler(cli_socket, count):
         newbuf = cli_socket.recv(count)
         if not newbuf:
             return None
+            continue
         buf += newbuf
         count -= len(newbuf)
     return buf
@@ -38,8 +39,7 @@ class RemoteClient:
             data = np.frombuffer(string_data, np.uint8)
             #data = data.reshape((cfg.window_height, cfg.window_width, 3))
             img_ori = cv2.imdecode(data, cv2.IMREAD_COLOR)
-            #cv2.imshow("window1", img_ori)
-            #cv2.waitKey(1)
+
             height_ori, width_ori = img_ori.shape[:2]
             img_ori, boxes_, scores_, labels_ = yu.get_predict_result(img_ori, param)
             # reconstruct result
@@ -53,14 +53,16 @@ class RemoteClient:
             print("length: {0}".format(len(result_string)))
             self.cli_socket.send(str.encode(str(len(result_string)).ljust(16)))
             self.cli_socket.send(result_string)
-
+            #cv2.imshow("window1", img_ori)
+            #cv2.waitKey(0)
 
     def start(self):
         thread = Thread(target=self.process())
+        thread.setDaemon(True)
         thread.start()
 
 
 if __name__ == "__main__":
     #pic = cv2.imread("D:/1.jpg")
     client = RemoteClient()
-    client.process()
+    client.start()
