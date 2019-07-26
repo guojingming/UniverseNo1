@@ -1,4 +1,5 @@
 import cv2
+import config as cfg
 
 
 def camera_init(number):
@@ -8,7 +9,9 @@ def camera_init(number):
 
 def get_picture(cap):
     ret, frame = cap.read()
-    return frame
+    frame = cv2.resize(frame, (cfg.window_width, cfg.window_height))
+    result, imgencode = cv2.imencode('.jpg', frame)
+    return result, imgencode
 
 
 def camera_release(cap):
