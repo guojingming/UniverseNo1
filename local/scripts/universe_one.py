@@ -1,13 +1,14 @@
 from detection_server import DetectionServer
+import server_test as st
 import config as cfg
 
 import threading
 import time
 
-detection_server = DetectionServer(cfg.server_address, cfg.server_port)
-detection_server.start()
-while True:
-    print(detection_server.get_tags())
+# detection_server = DetectionServer(cfg.server_address, cfg.server_port)
+# detection_server.start()
+# while True:
+#     print(detection_server.get_tags())
 
 
 # def process():
@@ -21,3 +22,7 @@ while True:
 #         t.start()
 #     while True:
 #         print("aaaaaaaaaaaaaaaaaaaaaa")
+
+st.start()
+while True:
+    print(st.get_tags())
